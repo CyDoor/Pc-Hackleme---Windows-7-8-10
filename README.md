@@ -8,11 +8,11 @@ ARCANUS is a customized payload generator/handler for penetration testing only.(
   
 - ARCANUS generates a unique payload for windows and linux systems that can't be detect with any antivirus programs. (Don't give any samples to Virus Total or similar web sites to keep it that way ;D )
 
--It has extra modules for exploitation. Ordinary reverse shell payloads offers only remote access to command prompts but ARCANUS has few special commands like " £persistence, £download, £upload, £meterpreter..."
+- It has extra modules for exploitation. Ordinary reverse shell payloads offers only remote access to command prompts but ARCANUS has few special commands like " £persistence, £download, £upload, £meterpreter..."
 
--It is silent and continuous. Metasploit payloads attempts to connect remote host just for ones but when you execute ARCANUS payloads they makes connection attemps every 5 second silently in background.
+- It is silent and continuous. Metasploit payloads attempts to connect remote host just for ones but when you execute ARCANUS payloads they makes connection attemps every 5 second silently in background.
 
--It is flexible. If you want to use it with Metasploit it has a meterpreter module for executeing meterpreter shellcodes on remote machine.
+- It is flexible. If you want to use it with Metasploit it has a meterpreter module for executeing meterpreter shellcodes on remote machine.
 
 
 # HOW TO USE 
