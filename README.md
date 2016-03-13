@@ -19,7 +19,7 @@ ARCANUS is a customized payload generator/handler for penetration testing only.(
 
 It works same as every reverse shell but it has some special module commands.
 
-  #===================================================================================================#
+  =====================================================================================================
   |                                                                                                   |
   |                                                                                                   |
   |                                                                                                   |
@@ -64,4 +64,4 @@ It works same as every reverse shell but it has some special module commands.
   |                                                       for remote connection on target machine     |
   |                                                                                                   |
   |                                                                                                   |
-  #===================================================================================================#
+  =====================================================================================================
