@@ -15,6 +15,8 @@ For Assistance : egebal1996@gmail.com
 
 - It is flexible. If you want to use it with Metasploit it has a meterpreter module for executeing meterpreter shellcodes on remote machine.
 
+- Platform independent ! ARCANUS works both on windows and linux.
+
 
 # HOW TO USE 
 
