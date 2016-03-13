@@ -19,49 +19,49 @@ ARCANUS is a customized payload generator/handler for penetration testing only.(
 
 It works same as every reverse shell but it has some special module commands.
 
-  =====================================================================================================
-  |                                                                                                   |
-  |                                                                                                   |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   [ COMMAND ]                                       [DESCRIPTION]                                 |
-  |  ===================================              ======================================          |
-  |                                                                                                   |
-  |   (*) £METERPRETER -C:                              This command executes given powershell        |
-  |                                                       meterpreter shellcode for metasploit        |
-  |                                                        integration.                               |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £PERSISTENCE:                                 This command installs a persistence module    |
-  |                                                       to remote computer for continious acces.    |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £METASHELL:                                   This command executes given metasploit reverse|
-  |                                                       shell shellcode on remote machine.          |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £UPLOAD -F "filename.exe":                    This command uploads a choosen file to        |
-  |                                                       remote computer via tcp socket stream.      |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £UPLOAD -G "http://filepath/filename.exe":    This command uploads a choosen file to        |
-  |                                                       remote computer via http get method.        |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £DOWNLOAD -F "filename.exe":                  This command download a choosen file          |
-  |                                                       from remote computer via tcp socket stream. |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £REQUEST -A "www.site.com":                   This command sends a http get request on      |
-  |                                                       remote machine to given addres.             |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £PLEASE "any command":                        This command asks users comfirmation for      |
-  |                                                       higher privilidge operations.               |
-  |                                                                                                   |
-  |                                                                                                   |
-  |   (*) £DESKTOP                                      This command adjusts remote desktop options   |
-  |                                                       for remote connection on target machine     |
-  |                                                                                                   |
-  |                                                                                                   |
-  =====================================================================================================
+   
+                                                                                                     
+                                                                                                     
+                                                                                                     
+                                                                                                     
+     [ COMMAND ]                                       [DESCRIPTION]                                 
+                            
+                                                                                                     
+     (*) £METERPRETER -C:                              This command executes given powershell        
+                                                         meterpreter shellcode for metasploit        
+                                                          integration.                               
+                                                                                                     
+                                                                                                     
+     (*) £PERSISTENCE:                                 This command installs a persistence module    
+                                                         to remote computer for continious acces.    
+                                                                                                     
+                                                                                                     
+     (*) £METASHELL:                                   This command executes given metasploit reverse
+                                                         shell shellcode on remote machine.          
+                                                                                                     
+                                                                                                     
+     (*) £UPLOAD -F "filename.exe":                    This command uploads a choosen file to        
+                                                         remote computer via tcp socket stream.      
+                                                                                                     
+                                                                                                     
+     (*) £UPLOAD -G "http://filepath/filename.exe":    This command uploads a choosen file to        
+                                                         remote computer via http get method.        
+                                                                                                     
+                                                                                                     
+     (*) £DOWNLOAD -F "filename.exe":                  This command download a choosen file          
+                                                         from remote computer via tcp socket stream. 
+                                                                                                     
+                                                                                                     
+     (*) £REQUEST -A "www.site.com":                   This command sends a http get request on      
+                                                         remote machine to given addres.             
+                                                                                                     
+                                                                                                     
+     (*) £PLEASE "any command":                        This command asks users comfirmation for      
+                                                         higher privilidge operations.               
+                                                                                                     
+                                                                                                     
+     (*) £DESKTOP                                      This command adjusts remote desktop options   
+                                                         for remote connection on target machine     
+                                                                                                     
+                                                                                                     
+  
