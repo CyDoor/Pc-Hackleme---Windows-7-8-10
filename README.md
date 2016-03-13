@@ -1,6 +1,7 @@
 # ARCANUS
 ARCANUS is a customized payload generator/handler for penetration testing only.(Use at your own risk !).
 
+For Assistance : egebal1996@gmail.com
 
 
 # WHY USE ARCANUS ?
