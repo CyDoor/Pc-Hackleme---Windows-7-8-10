@@ -21,6 +21,7 @@ For Assistance : egebal1996@gmail.com
 # HOW TO USE 
 
 It works same as every reverse shell but it has some special module commands.
+https://www.youtube.com/watch?v=BXYqeTs5RIE
 
    
                                                                                                      
