@@ -71,10 +71,14 @@ It works same as every reverse shell but it has some special module commands.
   
   Please don't submit any payload samples to any antivirus sites or online forums. I will publish manual AV Scan detection scores continuously.
   
+
+
+#/AV/    /Version/
+
 - Last Scan : 13/03/2016
 - Detection : 0/56
 
-#/AV/    /Version/
+
 --ALYac		20160313
 --AVG		20160313
 --AVware		20160313
