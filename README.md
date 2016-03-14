@@ -74,60 +74,60 @@ It works same as every reverse shell but it has some special module commands.
 - Last Scan : 13/03/2016
 - Detection : 0/56
 
-/AV/    /Version/
-  ALYac		20160313
-  AVG		20160313
-  AVware		20160313
-  Ad-Aware		20160313
-  AegisLab		20160313
-  Agnitum		20160313
-  AhnLab-V3		20160313
-  Alibaba		20160312
-  Antiy-AVL		20160313
-  Arcabit		20160313
-  Avast		20160313
-  Avira (no cloud)		20160313
-  Baidu		20160310
-  Baidu-International		20160313
-  BitDefender		20160313
-  Bkav		20160312
-  ByteHero		20160313
-  CAT-QuickHeal		20160312
-  CMC		20160307
-  ClamAV		20160311
-  Comodo		20160313
-  Cyren		20160313
-  DrWeb		20160313
-  ESET-NOD32		20160313
-  Emsisoft		20160313
-  F-Prot		20160313
-  F-Secure		20160313
-  Fortinet		20160313
-  GData		20160313
-  Ikarus		20160313
-  Jiangmin		20160313
-  K7AntiVirus		20160313
-  K7GW		20160313
-  Kaspersky		20160313
-  Malwarebytes		20160313
-  McAfee		20160313
-  McAfee-GW-Edition		20160313
-  eScan		20160313
-  Microsoft		20160313
-  NANO-Antivirus		20160313
-  Panda		20160313
-  Qihoo-360		20160313
-  Rising		20160313
-  SUPERAntiSpyware		20160313
-  Sophos		20160313
-  Symantec		20160310
-  Tencent		20160313
-  TheHacker		20160313
-  TrendMicro		20160313
-  TrendMicro-HouseCall		20160313
-  VBA32		20160313
-  VIPRE		20160313
-  ViRobot		20160313
-  Zillya		20160313
-  Zoner		20160313
-  nProtect		20160311
+#/AV/    /Version/
+--ALYac		20160313
+--AVG		20160313
+--AVware		20160313
+--Ad-Aware		20160313
+--AegisLab		20160313
+--Agnitum		20160313
+--AhnLab-V3		20160313
+--Alibaba		20160312
+--Antiy-AVL		20160313
+--Arcabit		20160313
+--Avast		20160313
+--Avira-(no-cloud)		20160313
+--Baidu		20160310
+--Baidu-International		20160313
+--BitDefender		20160313
+--Bkav		20160312
+--ByteHero		20160313
+--CAT-QuickHeal		20160312
+--CMC		20160307
+--ClamAV		20160311
+--Comodo		20160313
+--Cyren		20160313
+--DrWeb		20160313
+--ESET-NOD32		20160313
+--Emsisoft		20160313
+--F-Prot		20160313
+--F-Secure		20160313
+--Fortinet		20160313
+--GData		20160313
+--Ikarus		20160313
+--Jiangmin		20160313
+--K7AntiVirus		20160313
+--K7GW		20160313
+--Kaspersky		20160313
+--Malwarebytes		20160313
+--McAfee		20160313
+--McAfee-GW-Edition		20160313
+--eScan		20160313
+--Microsoft		20160313
+--NANO-Antivirus		20160313
+--Panda		20160313
+--Qihoo-360		20160313
+--Rising		20160313
+--SUPERAntiSpyware		20160313
+--Sophos		20160313
+--Symantec		20160310
+--Tencent		20160313
+--TheHacker		20160313
+--TrendMicro		20160313
+--TrendMicro-HouseCall		20160313
+--VBA32		20160313
+--VIPRE		20160313
+--ViRobot		20160313
+--Zillya		20160313
+--Zoner		20160313
+--nProtect		20160311
