@@ -20,7 +20,7 @@ For Assistance : egebal1996@gmail.com
 
 # HOW TO USE 
 
-- In order to build/compile  or run the go script you need to install golang and " fatih/color " package OR you can run the windows/linux binarys directy. 
+- In order to build/compile  or run the go script you need to install golang and " fatih/color " package OR you can run the windows/linux binarys directy but you still need to install golang to your system inorder to compile ARCANUS payloads. 
 
 
 It works same as every reverse shell but it has some special module commands.
