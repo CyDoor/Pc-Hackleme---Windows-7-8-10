@@ -45,8 +45,8 @@ https://www.youtube.com/watch?v=BXYqeTs5RIE
                                                          to remote computer for continious acces.    
                                                                                                      
                                                                                                      
-     (*) £METASHELL:                                   This command executes given metasploit reverse
-                                                         shell shellcode on remote machine.          
+     (*) £DISTRACT:                                   This command executes a fork bomb bat file to
+                                                         distrackt the remote user.          
                                                                                                      
                                                                                                      
      (*) £UPLOAD -F "filename.exe":                    This command uploads a choosen file to        
@@ -61,8 +61,8 @@ https://www.youtube.com/watch?v=BXYqeTs5RIE
                                                          from remote computer via tcp socket stream. 
                                                                                                      
                                                                                                      
-     (*) £REQUEST -A "www.site.com":                   This command sends a http get request on      
-                                                         remote machine to given addres.             
+     (*) £DOS -A \"www.site.com\":               This command starts a denial of service atack to      
+                                                         given website address.            
                                                                                                      
                                                                                                      
      (*) £PLEASE "any command":                        This command asks users comfirmation for      
