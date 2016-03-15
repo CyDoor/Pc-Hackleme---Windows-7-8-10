@@ -20,7 +20,12 @@ For Assistance : egebal1996@gmail.com
 
 # HOW TO USE 
 
+- In order to build/compile  or run the go script you need to install golang and " fatih/color " package OR you can run the windows/linux binarys directy. 
+
+
 It works same as every reverse shell but it has some special module commands.
+
+
 https://www.youtube.com/watch?v=BXYqeTs5RIE
 
    
