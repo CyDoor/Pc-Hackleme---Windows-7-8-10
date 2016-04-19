@@ -331,7 +331,7 @@ func BANNER() {
     color.Red("          |  _  ||    / | |    |  _  || . ` | | | |`--. \\")
     color.Red("          | | | || |\\ \\ | \\__/\\| | | || |\\  | |_| /\\__/ /")
     color.Red("          \\_| |_/\\_| \\_| \\____/\\_| |_/\\_| \\_/\\___/\\____/ ")
-    color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK               ]")
+    color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                  ]")
     color.Green("+ -- --=[ Version: 1.0.8                          ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
@@ -345,7 +345,7 @@ func BANNER() {
     color.Red("          | )   ( || ) \\ \\__| (____/\\| )   ( || )  \\  || (___) |/\\____) |")
     color.Red("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
 
-    color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                 ]")
+    color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                    ]")
     color.Green("+ -- --=[ Version: 1.0.8                          ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
