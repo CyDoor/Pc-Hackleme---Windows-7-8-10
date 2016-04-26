@@ -5,7 +5,7 @@ For Assistance : arcanusframework@gmail.com
 
 
 # WHY USE ARCANUS ?
-  İn pen.test world Metasploit is the mainstream for this job, but ARCANUS has few advantages.
+  In pentest world Metasploit is the mainstream for this job, but ARCANUS has few advantages.
   
 - ARCANUS generates a unique payload for windows and linux systems that can't be detected with any antivirus programs. (Don't give any samples to Virus Total or similar web sites to keep it that way ;D )
 
@@ -75,7 +75,7 @@ https://www.youtube.com/watch?v=BXYqeTs5RIE
                                                                                                      
                                                                                                      
                                                                                                   
-# ANTIVIRU AWARENESS
+# ANTIVIRUS AWARENESS
   
   Please don't submit any payload samples to any antivirus sites or online forums. I will publish manual AV Scan detection scores continuously.
   
