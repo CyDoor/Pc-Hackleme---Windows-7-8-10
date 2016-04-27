@@ -1,6 +1,7 @@
 package main
 
 import "net"
+import "time"
 import "net/http"
 import "fmt"
 import "bufio"
@@ -152,46 +153,47 @@ func main() {
       }
       break
     }else if Menu_Selector == 6 {
-      response, err := http.Get("https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/ARCANUS.go");
-      if err != nil {
-      color.Red("\n[!] Update Failed !")
-      fmt.Println(err)
-      };
-      defer response.Body.Close();
-      body, _ := ioutil.ReadAll(response.Body);
-      if strings.Contains(string(body), string("const VERSION string ="+VERSION)) {
-        color.Green("\n[+] Arcanus Version Up To Date !")
-        fmt.Print("\n\n>>")
-      }else{
-        color.Blue("\n[*] New Version Detected !")
-        var Choice string = "N"
-        color.Blue("\n[?] Do You Want To Update ? (Y/N) : ")  
-        fmt.Print("\n\n>>")
-        fmt.Scan(&Choice)
-        if Choice == "Y" || Choice == "y" {
-          if runtime.GOOS == "windows" {
-            color.Yellow("\n[*] Updating ARCANUS...")
-            exec.Command("cmd", "/C", "Update.exe").Start()
-            os.Exit(1)
-          }else if runtime.GOOS == "linux" {
-            color.Yellow("\n[*] Updating ARCANUS...")
-            Update, _ := os.Create("Update.sh")
+      	response, err := http.Get("https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/ARCANUS.go");
+      	if err != nil {
+      		color.Red("\n[!] Update Connection Failed !")
+      		fmt.Println(err)
+      	};
+      	defer response.Body.Close();
+      	body, _ := ioutil.ReadAll(response.Body);
+    	if strings.Contains(string(body), string(VERSION)) {
+        	color.Green("\n[+] Arcanus Version Up To Date !")
+        	time.Sleep(2*time.Second)
+        	main()
+      	}else{
+        	color.Blue("\n[*] New Version Detected !")
+        	var Choice string = "N"
+        	color.Blue("\n[?] Do You Want To Update ? (Y/N) : ")  
+        	fmt.Print("\n\n>>")
+        	fmt.Scan(&Choice)
+        	if Choice == "Y" || Choice == "y" {
+          		if runtime.GOOS == "windows" {
+            		color.Yellow("\n[*] Updating ARCANUS...")
+            		exec.Command("cmd", "/C", "Update.exe").Start()
+            		os.Exit(1)
+          		}else if runtime.GOOS == "linux" {
+            		color.Yellow("\n[*] Updating ARCANUS...")
+            		Update, _ := os.Create("Update.sh")
 
-            Update.WriteString("chmod 777 Update\n./Update")
-            Update.Close()
-            exec.Command("sh", "-c", "chmod 777 Update && ./Update.sh").Run()
-            exec.Command("sh", "-c", "./Update.sh").Run()
-            exec.Command("sh", "-c", "rm Update.sh").Run()
-            os.Exit(1)
-          }
-        }else if Choice == "N" || Choice == "n" {
-          main()
-        }else{
-          color.Blue("\n[?] Do You Want To Update ? (Y/N) : ")  
-          fmt.Scan(&Choice)
-          fmt.Print("\n\n>>")
-        }
-      }
+            		Update.WriteString("chmod 777 Update\n./Update")
+            		Update.Close()
+            		exec.Command("sh", "-c", "chmod 777 Update && ./Update.sh").Run()
+            		exec.Command("sh", "-c", "./Update.sh").Run()
+            		exec.Command("sh", "-c", "rm Update.sh").Run()
+            		os.Exit(1)
+          		}
+        	}else if Choice == "N" || Choice == "n" {
+          		main()
+        	}else{
+          		color.Blue("\n[?] Do You Want To Update ? (Y/N) : ")  
+          		fmt.Scan(&Choice)
+          		fmt.Print("\n\n>>")
+        	}
+      	}
     }else{
       main()
     }
