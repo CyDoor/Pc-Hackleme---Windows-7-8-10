@@ -1,12 +1,14 @@
 package main
 
 import "net"
+import "net/http"
 import "fmt"
 import "bufio"
 import "os"
 import "strings"
 import "runtime"
 import "io"
+import "io/ioutil"
 import "github.com/fatih/color"
 import "os/exec"
 import "path/filepath"
@@ -17,7 +19,9 @@ var Menu_Selector int
 var Listen_Port string
 var Payload PAYLOAD
 var Conn_Point *net.Conn
-const BUFFER_SIZE = 1024
+
+const BUFFER_SIZE int = 1024
+const VERSION string = "1.0.10" 
 
 
 type PAYLOAD struct {
@@ -147,6 +151,47 @@ func main() {
         color.Yellow("\n[*] Port:"+string(Listen_Port))
       }
       break
+    }else if Menu_Selector == 6 {
+      response, err := http.Get("https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/ARCANUS.go");
+      if err != nil {
+      color.Red("\n[!] Update Failed !")
+      fmt.Println(err)
+      };
+      defer response.Body.Close();
+      body, _ := ioutil.ReadAll(response.Body);
+      if strings.Contains(string(body), string("const VERSION string ="+VERSION)) {
+        color.Green("\n[+] Arcanus Version Up To Date !")
+        fmt.Print("\n\n>>")
+      }else{
+        color.Blue("\n[*] New Version Detected !")
+        var Choice string = "N"
+        color.Blue("\n[?] Do You Want To Update ? (Y/N) : ")  
+        fmt.Print("\n\n>>")
+        fmt.Scan(&Choice)
+        if Choice == "Y" || Choice == "y" {
+          if runtime.GOOS == "windows" {
+            color.Yellow("\n[*] Updating ARCANUS...")
+            exec.Command("cmd", "/C", "Update.exe").Start()
+            os.Exit(1)
+          }else if runtime.GOOS == "linux" {
+            color.Yellow("\n[*] Updating ARCANUS...")
+            Update, _ := os.Create("Update.sh")
+
+            Update.WriteString("chmod 777 Update\n./Update")
+            Update.Close()
+            exec.Command("sh", "-c", "chmod 777 Update && ./Update.sh").Run()
+            exec.Command("sh", "-c", "./Update.sh").Run()
+            exec.Command("sh", "-c", "rm Update.sh").Run()
+            os.Exit(1)
+          }
+        }else if Choice == "N" || Choice == "n" {
+          main()
+        }else{
+          color.Blue("\n[?] Do You Want To Update ? (Y/N) : ")  
+          fmt.Scan(&Choice)
+          fmt.Print("\n\n>>")
+        }
+      }
     }else{
       main()
     }
@@ -332,7 +377,7 @@ func BANNER() {
     color.Red("          | | | || |\\ \\ | \\__/\\| | | || |\\  | |_| /\\__/ /")
     color.Red("          \\_| |_/\\_| \\_| \\____/\\_| |_/\\_| \\_/\\___/\\____/ ")
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                  ]")
-    color.Green("+ -- --=[ Version: 1.0.8                          ]")
+    color.Green("+ -- --=[ Version: "+VERSION+"                         ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
   }else if runtime.GOOS == "linux" {
@@ -345,8 +390,8 @@ func BANNER() {
     color.Red("          | )   ( || ) \\ \\__| (____/\\| )   ( || )  \\  || (___) |/\\____) |")
     color.Red("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
 
-    color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                    ]")
-    color.Green("+ -- --=[ Version: 1.0.8                          ]")
+    color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                  ]")
+    color.Green("+ -- --=[ Version: "+VERSION+"                         ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
 
@@ -537,6 +582,7 @@ func MAIN_MENU() {
   color.Yellow("\n [3] GENERATE LINUX PAYLOAD                     (3.6 Mb)")
   color.Yellow("\n [4] GENERATE STAGER WINDOWS PAYLOAD            (2.0 Mb)")
   color.Yellow("\n [5] GENERATE STAGER LINUX PAYLOAD              (2.0 Mb)")
+  color.Yellow("\n [6] UPDATE")
   fmt.Print("\n\n>>")
 }
 
