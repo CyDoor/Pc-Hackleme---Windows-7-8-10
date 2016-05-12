@@ -62,7 +62,7 @@ https://www.youtube.com/watch?v=BXYqeTs5RIE
                                                          from remote computer via tcp socket stream. 
                                                                                                      
                                                                                                      
-     (*) £DOS -A \"www.site.com\":               This command starts a denial of service atack to      
+     (*) £DOS -A \"www.site.com\":                    This command starts a denial of service atack to      
                                                          given website address.            
                                                                                                      
                                                                                                      
