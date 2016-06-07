@@ -129,3 +129,8 @@ Verified By NoDistribute: http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4Al
 - VIPRE:  Clean
 - Zoner AntiVirus:  Clean
  				
+
+
+# NOTE
+
+- Using persistence may attract some Anti Virus software... 
