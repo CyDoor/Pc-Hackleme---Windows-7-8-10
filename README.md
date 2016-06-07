@@ -80,9 +80,6 @@ How to get meterpreter session : https://www.youtube.com/watch?v=vQUbD6Ro2Ug
 # ANTIVIRUS AWARENESS
   
   Please don't submit any payload samples to any antivirus sites or online forums. I will publish manual AV Scan detection scores continuously.
-  
-http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4AlICZ5Nyq
-
 
 File Name: Payload.exe
 
@@ -100,35 +97,35 @@ Verified By NoDistribute: http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4Al
 - Ad-Aware:  Clean
 - Avast:  Clean
 - AVG Free:  Clean
-Avira:  Clean
-BitDefender:  Clean
-BullGuard:  Clean
-Clam Antivirus:  Clean
-Comodo Internet Security:  Clean
-Dr.Web:  Clean
-ESET NOD32:  Clean
-eTrust-Vet:  Clean
-F-PROT Antivirus:  Clean
-F-Secure Internet Security:  Clean
-FortiClient:  Clean
-G Data:  Clean
-IKARUS Security:  Clean
-K7 Ultimate:  Clean
-Kaspersky Antivirus:  Clean
-McAfee:  Clean
-MS Security Essentials:  Clean
-NANO Antivirus:  Clean
-Norman:  Clean
-Norton Antivirus:  Clean
-Panda CommandLine:  Clean
-Panda Security:  Clean
-Quick Heal Antivirus:  Clean
-Solo Antivirus:  Clean
-Sophos:  Clean
-SUPERAntiSpyware:  Clean
-Trend Micro Internet Security:  Clean
-Twister Antivirus:  Clean
-VBA32 Antivirus:  Clean
-VIPRE:  Clean
-Zoner AntiVirus:  Clean
-				
+- Avira:  Clean
+- BitDefender:  Clean
+- BullGuard:  Clean
+- Clam Antivirus:  Clean
+- Comodo Internet Security:  Clean
+- Dr.Web:  Clean
+- ESET NOD32:  Clean
+- eTrust-Vet:  Clean
+- F-PROT Antivirus:  Clean
+- F-Secure Internet Security:  Clean
+- FortiClient:  Clean
+- G Data:  Clean
+- IKARUS Security:  Clean
+- K7 Ultimate:  Clean
+- Kaspersky Antivirus:  Clean
+- McAfee:  Clean
+- MS Security Essentials:  Clean
+- NANO Antivirus:  Clean
+- Norman:  Clean
+- Norton Antivirus:  Clean
+- Panda CommandLine:  Clean
+- Panda Security:  Clean
+- Quick Heal Antivirus:  Clean
+- Solo Antivirus:  Clean
+- Sophos:  Clean
+- SUPERAntiSpyware:  Clean
+- Trend Micro Internet Security:  Clean
+- Twister Antivirus:  Clean
+- VBA32 Antivirus:  Clean
+- VIPRE:  Clean
+- Zoner AntiVirus:  Clean
+ 				
