@@ -85,18 +85,21 @@ http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4AlICZ5Nyq
 
 
 File Name: Payload.exe
+
 File Size: 5.29 MB
+
 Scan Date: 10:06:12 | 06/07/2016
+
 Detected by: 0/35
 
 MD5: 62d7f426e9961e09d5653d2b0c68dbb2
 SHA256: 730391a1c8d639d4e98ef8249d62299567fbce9a9d35de62f6a966555e4935f3
 Verified By NoDistribute: http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4AlICZ5Nyq
 
-A-Squared:  Clean
-Ad-Aware:  Clean
-Avast:  Clean
-AVG Free:  Clean
+- A-Squared:  Clean
+- Ad-Aware:  Clean
+- Avast:  Clean
+- AVG Free:  Clean
 Avira:  Clean
 BitDefender:  Clean
 BullGuard:  Clean
