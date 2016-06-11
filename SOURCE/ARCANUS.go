@@ -23,7 +23,7 @@ var Payload PAYLOAD
 var Conn_Point *net.Conn
 
 const BUFFER_SIZE int = 1024
-const VERSION string = "1.0.10" 
+const VERSION string = "1.5.1" 
 
 
 type PAYLOAD struct {
