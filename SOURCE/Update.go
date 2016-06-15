@@ -14,13 +14,13 @@ import "github.com/fatih/color"
 func main() {
 
 
-	Repo := [6]string{"https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/ARCANUS.go", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x64", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x64.exe", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x86", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x86.exe", "https://github.com/EgeBalci/ARCANUS/raw/master/README.md"}
+	Repo := [6]string{"https://github.com/EgeBalci/ARCANUS/blob/master/SOURCE/ARCANUS.go", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x64", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x64.exe", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x86", "https://github.com/EgeBalci/ARCANUS/raw/master/ARCANUS_x86.exe", "https://github.com/EgeBalci/ARCANUS/raw/master/README.md"}
 
 	if runtime.GOOS == "windows" {
 		exec.Command("cmd", "/C", "msg ARCANUS Update Started...").Run()
 		exec.Command("cmd", "/C", "del ARCANUS.go").Run()
 		exec.Command("cmd", "/C", "del ARCANUS_x64.exe").Run()
-		exec.Command("cmd", "/C", "del ARCANUS_x86.exe").Run()	
+		exec.Command("cmd", "/C", "del ARCANUS_x86.exe").Run()
 		exec.Command("cmd", "/C", "del ARCANUS_x64").Run()
 		exec.Command("cmd", "/C", "del ARCANUS_x86").Run()
 		color.Blue("[*] Updating ARCANUS...\n\n")
@@ -46,7 +46,7 @@ func main() {
 		exec.Command("sh", "-c", "zenity --info --text=\"ARCANUS Update Started... \"").Run()
 		exec.Command("sh", "-c", "rm ARCANUS.go").Run()
 		exec.Command("sh", "-c", "rm ARCANUS_x64.exe").Run()
-		exec.Command("sh", "-c", "rm ARCANUS_x86.exe").Run()	
+		exec.Command("sh", "-c", "rm ARCANUS_x86.exe").Run()
 		exec.Command("sh", "-c", "rm ARCANUS_x64").Run()
 		exec.Command("sh", "-c", "rm ARCANUS_x86").Run()
 		color.Blue("[*] Updating ARCANUS...\n\n")
@@ -70,5 +70,5 @@ func main() {
 		}*/
 
 	}
-	
+
 }
