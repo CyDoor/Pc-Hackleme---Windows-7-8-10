@@ -154,7 +154,7 @@ func main() {
       }
       break
     }else if Menu_Selector == 6 {
-      	response, err := http.Get("https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/ARCANUS.go");
+      	response, err := http.Get("https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/SOURCE/ARCANUS.go");
       	if err != nil {
       		color.Red("\n[!] Update Connection Failed !")
       		fmt.Println(err)
