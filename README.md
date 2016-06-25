@@ -134,3 +134,8 @@ Verified By NoDistribute: http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4Al
 # NOTE
 
 - Using persistence may attract some Anti Virus software... 
+- 
+
+# DONATIONS
+
+- http://patreon.com/user?u=3556027
