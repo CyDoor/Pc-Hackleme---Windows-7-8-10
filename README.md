@@ -1,4 +1,4 @@
-# ARCANUS [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://raw.githubusercontent.com/EgeBalci/HERCULES/master/LICENSE)
+# ARCANUS [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/LICENSE)
 ARCANUS is a customized payload generator/handler for penetration testing only.(Use at your own risk !).
 
 For Assistance : arcanusframework@gmail.com
