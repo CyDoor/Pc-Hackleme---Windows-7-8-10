@@ -372,6 +372,15 @@ func DOWNLOAD_VIA_TCP() {
 
 
 func BANNER() {
+
+  Green := color.New(color.FgGreen)
+  BoldGreen := Green.Add(color.Bold)
+  Yellow := color.New(color.FgYellow)
+  BoldYellow := Yellow.Add(color.Bold)
+  Red := color.New(color.FgRed)
+  BoldRed := Red.Add(color.Bold)
+
+
   if runtime.GOOS == "windows" {
     color.Red("            ___  ______  _____   ___   _   _ _   _ _____ ")
     color.Red("           / _ \\ | ___ \\/  __ \\ / _ \\ | \\ | | | | /  ___|")
@@ -384,14 +393,14 @@ func BANNER() {
     color.Green("+ -- --=[ Support: arcanusframework@gmail.com     ]")
     color.Green("+ -- --=[          Created By Ege Balcı           ]")
   }else if runtime.GOOS == "linux" {
-    color.Red("           _______  _______  _______  _______  _                 _______ ")
-    color.Red("          (  ___  )(  ____ )(  ____ \\(  ___  )( (    /||\\     /|(  ____ \\")
-    color.Red("          | (   ) || (    )|| (    \\/| (   ) ||  \\  ( || )   ( || (    \\/")
-    color.Red("          | (___) || (____)|| |      | (___) ||   \\ | || |   | || (_____ ")
-    color.Red("          |  ___  ||     __)| |      |  ___  || (\\ \\) || |   | |(_____  )")
-    color.Red("          | (   ) || (\\ (   | |      | (   ) || | \\   || |   | |      ) |")
-    color.Red("          | )   ( || ) \\ \\__| (____/\\| )   ( || )  \\  || (___) |/\\____) |")
-    color.Red("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
+    BoldRed.Println("           _______  _______  _______  _______  _                 _______ ")
+    BoldRed.Println("          (  ___  )(  ____ )(  ____ \\(  ___  )( (    /||\\     /|(  ____ \\")
+    BoldRed.Println("          | (   ) || (    )|| (    \\/| (   ) ||  \\  ( || )   ( || (    \\/")
+    BoldRed.Println("          | (___) || (____)|| |      | (___) ||   \\ | || |   | || (_____ ")
+    BoldRed.Println("          |  ___  ||     __)| |      |  ___  || (\\ \\) || |   | |(_____  )")
+    BoldRed.Println("          | (   ) || (\\ (   | |      | (   ) || | \\   || |   | |      ) |")
+    BoldRed.Println("          | )   ( || ) \\ \\__| (____/\\| )   ( || )  \\  || (___) |/\\____) |")
+    BoldRed.Println("          |/     \\||/   \\__/(_______/|/     \\||/    )_)(_______)\\_______)")
 
     color.Green("\n\n+ -- --=[      ARCANUS FRAMEWORK                  ]")
     color.Green("+ -- --=[ Version: "+VERSION+"                          ]")
