@@ -1,5 +1,10 @@
-# ARCANUS [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/LICENSE)
+# ARCANUS [![License](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000)](https://raw.githubusercontent.com/EgeBalci/ARCANUS/master/LICENSE)  [![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](http://patreon.com/user?u=3556027)[![Golang](https://img.shields.io/badge/Go-1.6-blue.svg)](https://golang.org)
+
 ARCANUS is a customized payload generator/handler for penetration testing only.(Use at your own risk !).
+
+# Warning
+This is the final release of ARCANUS, i will not continue developping this project, but i also have a project called HERCULES(https://github.com/EgeBalci/HERCULES), it is more advanged payload generator, check it out ;D
+
 
 For Assistance : arcanusframework@gmail.com
 
