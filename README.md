@@ -141,6 +141,8 @@ Verified By NoDistribute: http://NoDistribute.com/result/D7FExfh3OMktPism0wdo4Al
 - Using persistence may attract some Anti Virus software... 
 - 
 
-# DONATIONS
+![](http://i.imgur.com/8L1wmjo.png)
 
-- http://patreon.com/user?u=3556027
+   ![](https://blockchain.info/qr?data=14n1bJmCRNpLKAJVJ55jStH5VueFk6G1n4&size=200)
+
+Bitcoin: 14n1bJmCRNpLKAJVJ55jStH5VueFk6G1n4&size
