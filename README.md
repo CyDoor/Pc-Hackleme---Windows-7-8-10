@@ -10,9 +10,9 @@ For Assistance : arcanusframework@gmail.com
 
 
 # WHY USE ARCANUS ?
-  In pentest world Metasploit is the mainstream for this job, but ARCANUS has few advantages.
+  In pentest community Metasploit is the mainstream for this job, but ARCANUS has few advantages.
   
-- ARCANUS generates a unique payload for windows and linux systems that can't be detected with any antivirus programs. (Don't give any samples to Virus Total or similar web sites to keep it that way ;D )
+- ARCANUS generates a unique payload for windows and linux systems that can't be detected with majority of antivirus programs. (Don't give any samples to Virus Total or similar web sites to keep it that way ;D )
 
 - It has extra modules for exploitation. Ordinary reverse shell payloads offers only remote access to command prompts but ARCANUS has few special commands like " £persistence, £download, £upload, £meterpreter..."
 
